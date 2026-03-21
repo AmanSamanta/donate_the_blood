@@ -1,33 +1,20 @@
 <?php
-
 //include header file
 include('include/header.php');
-
-
 ?>
-
-
 <div class="container-fluid" style="width: 100%; background: url(img/max.jpg) no-repeat center center fixed;">
 	<div class="row">
 		<div class="col-md-6 offset-md-3" style="width: 100%">
-
-
 			<!-- <div class="ghatalhos-img"> -->
 			<div style="-webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover; height: 100vh; width: 100%; padding: 9px; color: white; font-weight: 700; display: flex; flex-direction: column;justify-content: center; align-items: center; text-align: center; box-sizing: border-box;">
 				<div class="mb-2">
-				<marquee class='text-center' style='font-size: 55px; color: red;'>Donate The Blood, Save the Life</marquee>";<br>
-
-					
-					<h1 style='font-size: 60px; color: yellow; font-weight:bold'>ঘাটাল সুপার স্পেশালিস্ট হাসপাতাল
+				<h1 class='text-center' style='font-size: 40px; color: red; margin-bottom: 10px;'>Donate The Blood, Save the Life</h1>
+					<h1 style='font-size: 50px; color: yellow; font-weight:bold'>ঘাটাল সুপার স্পেশালিস্ট হাসপাতাল
 					</h1>";
-
 				</div>
-
 				<div>
 					<h1 class="text-center" style="font-size: 1.7rem;">Search The Donor Location</h1>
 					<hr class="white-bar text-center">
-
-
 
 					<form action="index.php" method="post" class="form-inline text-center" style="padding: 10px 0px 0px 5px;">
 

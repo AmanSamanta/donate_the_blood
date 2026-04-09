@@ -65,7 +65,6 @@
 	</div>
 </div>
 
-
 	<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong>Are you delete this record?</strong>
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -81,21 +80,15 @@
                 </button>      
             </form>
      </div>
-
      <br>
-
 <div class="alert alert-success alert-dismissible fade show" role="alert">
 <strong>Message</strong>
 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
 </div>
-
 <div class="container" style="padding: 60px 0;">
 	<div class="row data">
-		
-
-
 	</div>
 </div>
 <div class="loader" id="wait">

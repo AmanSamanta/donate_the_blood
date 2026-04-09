@@ -148,7 +148,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container size">
     <div class="row">
         <div class="col-md-6 offset-md-3 form-container">
-            <h3>SignUp</h3>
+            <h3>Register your data Carefully</h3>
 
             <hr class="red-bar">
             <?php if (isset($_termError)) echo $_termError; ?>
@@ -173,6 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <option value="O-" <?php if ($blood_group == "O-") echo "selected"; ?>>O-</option>
                         <option value="AB+" <?php if ($blood_group == "AB+") echo "selected"; ?>>AB+</option>
                         <option value="AB-" <?php if ($blood_group == "AB-") echo "selected"; ?>>AB-</option>
+                        <option value="oo-" <?php if ($blood_group == "AB-") echo "selected"; ?>>oo-</option>
                     </select>
 
 

@@ -1,4 +1,5 @@
 <?php
+
 //include header file
 include('include/header.php');
 ?>
@@ -21,7 +22,6 @@ include('include/header.php');
 						<div class="form-group text-center justify-content-center">
 
 							<select style="width: 220px; height: 45px;" name="city" id="city" class="form-control demo-default" required>
-
 
 								<option value="">-- Select --</option>
 								<optgroup title="purba medinipur" label="&raquo; purba medinipur">purba medinipur</optgroup>
@@ -113,7 +113,7 @@ include('include/header.php');
                             <th>Gender</th>
                             <th>Date of Birth</th>
                             <th>Email</th>
-                            <th>Contact No</th>
+                            // <th>Contact No</th>
                             <th>City</th>
                         </tr>";
 						foreach ($result as $row) {
@@ -124,7 +124,7 @@ include('include/header.php');
                             <td>" . $row['gender'] . "</td>
                             <td>" . $row['date_of_birth'] . "</td>
                             <td>" . $row['email'] . "</td>
-                            <td>" . $row['contact_no'] . "</td>
+                            // <td>" . $row['contact_no'] . "</td>
                             <td>" . $row['city'] . "</td>
                           </tr>";
 						}
@@ -137,8 +137,6 @@ include('include/header.php');
 				}
 			}
 			?>
-
-
 		</div>
 	</div>
 </div>
@@ -161,6 +159,55 @@ include('include/header.php');
 </div>
 <!-- end doante section -->
 
+<!-- registered donors section -->
+<div class="container-fluid" style="padding: 30px 15px; background-color: #f1f3f6;">
+	<div class="row">
+		<div class="col-md-10 offset-md-1">
+			<h2 class="text-center" style="color: #c82333; font-weight: 700;">List All Patients</h2>
+			<hr class="white-bar" style="border-color: #c82333;">
+
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead class="thead-dark">
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Blood Group</th>
+							<th>Gender</th>
+							<th>City</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						try {
+							$allDonorsStmt = $conn->prepare("SELECT id, name, blood_group, gender, city FROM donors ORDER BY id DESC");
+							$allDonorsStmt->execute();
+							$allDonors = $allDonorsStmt->fetchAll(PDO::FETCH_ASSOC);
+
+							if (!empty($allDonors)) {
+								foreach ($allDonors as $donor) {
+									echo "<tr>";
+									echo "<td>" . htmlspecialchars($donor['id']) . "</td>";
+									echo "<td>" . htmlspecialchars($donor['name']) . "</td>";
+									echo "<td>" . htmlspecialchars($donor['blood_group']) . "</td>";
+									echo "<td>" . htmlspecialchars($donor['gender']) . "</td>";
+									echo "<td>" . htmlspecialchars($donor['city']) . "</td>";
+									echo "</tr>";
+								}
+							} else {
+								echo "<tr><td colspan='5' class='text-center'>No registered donors found.</td></tr>";
+							}
+						} catch (PDOException $e) {
+							echo "<tr><td colspan='5' class='text-center text-danger'>Unable to load donor data.</td></tr>";
+						}
+						?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end registered donors section -->
 
 <div class="container">
 	<div class="row">
@@ -203,8 +250,6 @@ include('include/header.php');
 </div>
 
 <!-- end aboutus section -->
-
-
 <?php
 //include footer file
 include('include/footer.php');

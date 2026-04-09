@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					<button class="btn btn-danger btn-lg center-aligned" type="submit" name="SignIn">SignIn</button>
 				</div>
 				<div class="form-group">
-					<p >Don't Have Account? <a href="donate.php" style="font-weight: 'bold';">SignUp</a></p>
+					<p >Don't Have Account? <a href="donate.php" style="font-weight: 'bold';">Register form</a></p>
 				</div>
 			</form>
 			<?php
